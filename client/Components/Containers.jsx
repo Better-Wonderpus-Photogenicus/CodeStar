@@ -1,10 +1,12 @@
 import React from "react";
-import FormContainer from "./FormContainer";
-import ResultsContainer from "./ResultsContainer";
+import FormContainer from "./FormContainer.jsx";
+import ResultsContainer from "./ResultsContainer.jsx";
 
 function CompatabilityContainer() {
+  // fetch request for data
+
   return (
-    <div>
+    <div id="containers">
       <FormContainer />
       <ResultsContainer />
     </div>
