@@ -3,7 +3,7 @@ import SignDropdown from "./SignDropdown.jsx";
 
 function FormContainer(props) {
   return (
-    <>
+    <id="formContainer">
       <SignDropdown id={'userSign'} text={'Your Sign'}/>
       <SignDropdown id={'partnerSign'} text={'Partner\'s Sign'}/>
       <button onClick={props.handleSubmit}>Submit</button>

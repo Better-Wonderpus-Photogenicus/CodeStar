@@ -26,7 +26,7 @@ function CompatabilityContainer() {
   }
 
   return (
-    <div>
+    <div id="containers">
       <FormContainer handleSubmit={handleSubmit}/>
       <ResultsContainer text={text}/>
     </div>
