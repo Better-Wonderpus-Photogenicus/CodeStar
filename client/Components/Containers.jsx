@@ -19,7 +19,7 @@ function CompatabilityContainer() {
       },
       body: JSON.stringify(body)
     })
-    .then(response => response.json)
+    .then(response => response.json())
     .then(text => setText(text))
     .catch(err => console.log(err))
     console.log('User:', id1, 'Partner:', id2)
