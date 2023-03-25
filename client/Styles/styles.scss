@@ -1,0 +1,69 @@
+#header {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid blue;
+
+  #logo {
+    width: 40%;
+    border: 1px solid blue;
+    // justify-content: flex-end;
+    align-items: flex-end;
+  }
+  #links {
+    width: 18%;
+    border: 1px solid blue;
+    justify-content: center;
+    align-items: baseline;
+    // margin: 5%;
+  }
+}
+
+#containers {
+  display: flex;
+  justify-content: center;
+}
+
+#formContainer {
+  display: flex;
+
+}
+
+#resultsContainer{
+  display: flex;
+  border: 1px solid blue; 
+  border-Radius: 5;
+  width: 75%; 
+  display: flex; 
+  justify-content: center; 
+  flex-direction: column;
+
+  h2 {
+    width: 25%;
+    border: 1px solid blue;
+    color: purple;
+  }
+  #resultsBody{
+    border: 1px solid blue;
+    border-radius: 5;
+    width: 95%;
+    height: 15rem;
+    margin: auto;
+  }
+  #save{
+    display: flex;
+    justify-content: center;
+  }
+  #btn {
+    margin-left: 15px;
+  }
+}
+
+#signup {
+  display: flex;
+
+}
+
+#login {
+  display: flex;
+
+}
