@@ -1,7 +1,7 @@
 const dotenv = require('dotenv').config();
-const bloom = {};
+const bloomController = {};
 
-bloom.getCompatibility = (req, res, next) => {
+bloomController.getCompatibility = (req, res, next) => {
     const { id1, id2 } = req.body;
     fetch('https://api.bloom.be/api/signtosign', {
         method: "POST", 
@@ -31,4 +31,4 @@ bloom.getCompatibility = (req, res, next) => {
 
 }
 
-module.exports = bloom;
+module.exports = bloomController;
