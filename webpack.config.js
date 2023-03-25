@@ -34,6 +34,8 @@ module.exports = {
   ],
   devServer: {
     historyApiFallback: true,
+    host: 'localhost', 
+    port: 8080,
 		static: {
 			publicPath: '/build',
 			directory: path.resolve(__dirname, 'build'),
