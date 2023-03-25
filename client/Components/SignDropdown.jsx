@@ -3,7 +3,7 @@ import React from "react";
 function SignDropdown (props) {
     return(
         <>
-        <label for={props.id}>{props.text}</label>
+        <label htmlFor={props.id}>{props.text}</label>
         <select name={props.id} id={props.id}>
             <option value={0}>Aries</option>
             <option value={1}>Taurus</option>
