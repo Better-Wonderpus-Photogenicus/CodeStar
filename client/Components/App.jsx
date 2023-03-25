@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Header'
-import CompatabilityContainer from './Containers';
+import Header from './Header.jsx'
+import CompatabilityContainer from './Containers.jsx';
 
 function App() {
   return (
