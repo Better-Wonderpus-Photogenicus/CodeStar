@@ -32,13 +32,22 @@ bloomController.getCompatibility = (req, res, next) => {
     .then(data => data.json())
     .then(data => {
         let text =  data.text.text;
+        //REMOVES LAST </P>
         text = text.slice(0, text.length-4);
-        // const newText = text.replace(/<p>(.*?)<p>/g, '')
-        let pointer = 0;
-        for (let i = 0 ; i < text.length; i++) {
-            if (text[i] === '>') pointer = i;
-        }
-        text = text.slice(pointer+1);
+        //REMOVES BEGINNING BETWEEN OPEN P TAGS
+        text = text.replace(/(<p>([^;]*)<p>)/, '')
+        //REMOVES ALL CHARACTERS WITH &NBSP; AT THE END
+        text = text.replace(/(&nbsp;)/g, '')
+        //REMOVES THE BREAK TAGS LEFT OVER AT THE END
+        text = text.replace(/<([^;]*)>/, '')
+        //REPLACES THE BROKEN APOSTROPHE
+        text = text.replace(/&([^;]*);/, "'")
+
+        // let pointer = 0;
+        // for (let i = 0 ; i < text.length; i++) {
+        //     if (text[i] === '>') pointer = i;
+        // }
+        // text = text.slice(pointer+1);
         res.locals.text = text})
     .then(()=> next())
     .catch(err => next(err));

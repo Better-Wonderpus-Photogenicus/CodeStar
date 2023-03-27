@@ -6,13 +6,16 @@ const bcrypt = require('bcryptjs');
 
 const userSchema = new Schema({
   username: { type: String, required: true, unique: true },
-  password: { type: String, required: true }, 
+  password: { type: String }, 
+  //ONLY USED IF GOOGLE LOGIN
+  name: { type: String },
+  birthday: { type: Date, required: true },
 }, { collection: 'Users'})
 
 userSchema.pre('save', function (next) {
     const user = this;
-  
     if (this.isModified('password') || this.isNew) {
+      if (!user.password) return next();
       bcrypt.hash(user.password, SALT_WORK_FACTOR, function (err, hash) {
         // Store hash in your password DB.
         if (err) return next(err);

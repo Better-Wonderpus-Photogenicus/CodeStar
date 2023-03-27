@@ -7,13 +7,13 @@ cookieController.setCookie = (req, res, next) => {
 };
 
 cookieController.setSSIDCookie = (req, res, next) => {
-  const { username } = req.body;
-  User.findOne({ username: username })
+  const username = res.locals.google ? res.locals.id : req.body.username;
+  User.findOne({ username })
     .then(results => {
       res.cookie('ssid', results.id, { httpOnly: true });
-      next();
+      return next();
     })
-    .catch(err => next(err));
+    .catch(err => next({log: 'ssidcookie', message: {err: 'error in ssid'}}));
 };
 
 module.exports = cookieController;
