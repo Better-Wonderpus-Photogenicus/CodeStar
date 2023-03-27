@@ -11,13 +11,12 @@ function App() {
     <BrowserRouter>
       <header id='header'>
         <h1 id="logo"> {"<"}code{">"}star </h1>
+      </header>
         <nav id='nav'>
-          <Link className='link' to='/'>Home</Link>
+          {/* <Link className='link' to='/'>Home</Link> */}
           <Link className='link' to='/profile'>Profile</Link>
           <Link className='link' to='/compatibility'>Compatibility</Link>
-
         </nav>
-      </header>
       <main>
         <Routes>
           <Route path='/' element={<LogIn/>}></Route>

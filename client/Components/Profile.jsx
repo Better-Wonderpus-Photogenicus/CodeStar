@@ -40,9 +40,9 @@ function Profile() {
 
   return (
     <div>
-      <p> Name: {name} </p>
-      <p> Birthday: {birthday} </p>
-      <div>
+      <p id='profile'> Name: {name} </p>
+      <p id='profile'> Birthday: {birthday} </p>
+      <div id='savedcomparisons'>
         {saved}
       </div>
     </div>

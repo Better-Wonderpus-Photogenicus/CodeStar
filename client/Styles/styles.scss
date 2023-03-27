@@ -5,32 +5,33 @@ body {
   background-image: url('../Assets/Images/redd-f-5CPIzjWzGxo-unsplash.jpg');
   font-family: 'Source Code Pro', monospace;  color: lightblue;
   margin: 0px;
+  font-size: 1.5rem;
 }
 
 header {
   display: flex;
-  justify-content: flex-end;
-  align-items: baseline;
-  height: 80px;
+  align-items: center;
+  height: 120px;
   margin-top: 0px;
-  background-color: rgba(44, 98, 208, 0.2)
+  background-color: rgba(15, 34, 73, 0.9);
+  font-size: 2rem;
 }
 
-  #nav {
-    display: flex;
-    width: 100%;
-    height: 3rem;
-    justify-content: flex-start;
-    padding-left: 10px;
-    align-items: center;
-    border: 1px solid green;
-    font-size: 1.5rem;
-  }
+#nav {
+  display: flex;
+  width: 100%;
+  height: 6rem;
+  justify-content: space-around;
+  padding-left: 10px;
+  align-items: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
   #logo {
     display: flex;
     width: 100%;
     height: 5rem;
-    border: 1px solid blue;
+    // border: 1px solid blue;
     align-items: center;
     justify-content: center;
     margin: 0;
@@ -39,6 +40,7 @@ header {
 
 a {
   color: white;
+  text-decoration: none;
 }
 
 select {
@@ -57,6 +59,7 @@ button {
   border: 1px solid lightblue;
   border-radius: 25px;
   padding: 12px;
+  font-family: 'Source Code Pro';
 }
 
 #containers {
@@ -64,11 +67,16 @@ button {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  // border: 1px solid white;
+  height: 75vh;
 
   #userSign, #formSubmit, #partnerSign {
     display: flex;
     align-items: center;  
-    height: 25px;
+    justify-content: center;
+    height: 40px;
+    width: 150px;
+    font-size: 1.2rem;
   }
 
   #dropdowns {
@@ -77,7 +85,7 @@ button {
     justify-content: space-around;
     align-items: baseline;
     padding: 20px;
-    width: 50vh;
+    width: 100vh;
   }
 
   #formContainer {
@@ -85,7 +93,7 @@ button {
     // border: 1px solid green;
     flex-direction: column;
     align-items: center;    
-    height: 100px;
+    height: 180px;
     margin: 20px;
     width: 75%;
     justify-content: space-around;
@@ -112,16 +120,19 @@ button {
       // border: 1px solid blue;
       border-radius: 5;
       width: 95%;
-      height: 15rem;
+      height: 20rem;
       margin: auto;
     }
     #save{
       display: flex;
       justify-content: center;
       align-items: center;
+      // width: 50px;
     }
     #btn {
       margin-left: 15px;
+      width: 80px;
+      font-size: 1rem;
     }
   }
 }
@@ -130,23 +141,23 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid red;
+  // border: 1px solid red;
   height: 50vh;
 
   .signup-container {
     display: flex;
-    width: 300px;
+    width: 350px;
     justify-content: flex-start;
     align-items: center;
     margin: 10px;
     padding: 2px;
-    // border: 1px solid red;
   }
   #text {
-    margin: 5px 10px;
-  }
-  #text2, #text3 {
     margin: 5px 12px;
+  }
+  #text2 {
+    margin: 5px 12px;
+    width: 165px;
   }
   #birthday {
     margin: 0 15px;
@@ -155,17 +166,21 @@ button {
   #submit {
     display: flex;
     justify-content: flex-end;
-    width: 242px;
+    width: 314px;
+    font-family: 'Source Code Pro';
   }
   #btn {
-    height: 30px;
-    width: 80px;
-    background-color: black;
-    color: aqua;
+    height: 45px;
+    width: 100px;
+    font-size: 1.2rem;
+    background-color: rgb(31, 32, 32);
+    color: lightblue;
     border-radius: 5px;
+    font-family: 'Source Code Pro';
   }
   #password, #username {
     height: 25px;
+    width: 155px;
   }
 }
 
@@ -174,8 +189,8 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid red;
-  height: 50vh;
+  // border: 1px solid red;
+  height: 65vh;
 
   .login-container {
     display: flex;
@@ -189,17 +204,13 @@ button {
   #submit {
     display: flex;
     justify-content: flex-end;
-    width: 242px;
-    
+    width: 302px;
+    font-family: 'Source Code Pro';
   }
-  #text {
+  #text, #text2 {
     margin: 5px 10px;
   }
-  #text2 {
-    margin: 5px 12px;
-  }
   #bottombox {
-    // border: 1px solid red;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -208,12 +219,15 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    // border: 1px solid red;
-    width: 40%;
-    height: 40px;
+    width: 30%;
+    height: 45px;
     margin: 20px;
-    background-color: aqua;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    background-color: rgb(31, 32, 32);
+    color: lightblue;    
     border-radius: 5px;
+    font-family: 'Source Code Pro';
   }
   #newsignup {
     display: flex;
@@ -222,14 +236,33 @@ button {
     margin: 30px;
   }
   #btn {
-    height: 30px;
-    width: 80px;
-    background-color: black;
-    color: aqua;
+    height: 45px;
+    width: 100px;
+    font-size: 1.2rem;
+    background-color: rgb(31, 32, 32);
+    color: lightblue;
     border-radius: 5px;
+    font-family: 'Source Code Pro';
   }
   #password, #username {
     height: 25px;
   }
+}
+
+#savedcomparisons {
+  margin: 30px;
+  #savedName {
+    color: rgb(2, 129, 220);
+    font-weight: bold;
+    font-size: 1.8rem;
+    // border: 2px solid white;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+#profile {
+  margin: 10px 30px;
 }
 
