@@ -48,9 +48,11 @@ userController.verifyUser = (req, res, next) => {
           results.comparePassword(password, (err, isMatch) => {
             if (!isMatch) {
               //REDIRECT TO SIGNUP PAGE
-              res.redirect('http://localhost:8080/');
+              return res.redirect('http://localhost:8080/signup');
             } else return next();
           })
+        } else {
+          return res.redirect('http://localhost:8080/signup');
         }
       })
   } else {
