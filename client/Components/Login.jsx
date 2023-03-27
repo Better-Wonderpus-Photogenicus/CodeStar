@@ -38,22 +38,24 @@ function LogIn() {
     <div className='login'>
       <form action='http://localhost:3000/login' method='post'>
         <div className='login-container'>
-          <label>Username: </label>
-          <input type='text' name='username' required />
+          <label id='text'>Username: </label>
+          <input type='text' name='username' id='username'required />
         </div>
         <div className='login-container'>
-          <label>Password: </label>
-          <input type='password' name='password' required />
+          <label id='text2'>Password: </label>
+          <input type='password' name='password' id='password' required />
         </div>
-        <div className='login-container'>
-          <input type='submit' />
+        <div className='login-container' id='submit'>
+          <input type='submit' id='btn'/>
         </div>
       </form> 
 
-      <div> 
-        <button type='button' onClick={oauthSignIn}>Log In With Google</button>
-        <p>Don't have an account? Click here to sign-up.</p>
-        <a href="/signup">Sign Up</a>
+      <div id='bottombox'> 
+        <button type='button' id='google' onClick={oauthSignIn}>Log In With Google</button>
+        <div id='newsignup'> 
+          <p>Don't have an account? Click here to sign-up.</p>
+          <a href="/signup">Sign Up</a>
+        </div>
       </div> 
     </div>
   )

@@ -19,7 +19,7 @@ function CompatibilityContainer() {
     loggedIn();
   }, [])
 
-  if (!loggedIn) location.href = 'http://localhost:8080/'
+  if (!loggedIn) {location.href = 'http://localhost:8080/'; alert('Please sign in');}
 
   function handleSubmit(){
     const id1 = document.getElementById('userSign').value

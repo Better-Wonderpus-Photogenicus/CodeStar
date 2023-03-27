@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './Header.jsx'
 import CompatibilityContainer from './Containers.jsx';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import LogIn from './Login.jsx';
@@ -9,9 +8,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <header>
+      <header id='header'>
         <h1 id="logo"> {"<"}code{">"}star </h1>
-        <nav>
+        <nav id='nav'>
           <Link className='link' to='/'>Home</Link>
           {/* <Link className='link' to='/profile'>Profile</Link> */}
         </nav>
@@ -25,10 +24,6 @@ function App() {
         </Routes>
       </main>
     </BrowserRouter>
-    // <div>
-    //   <Header /> 
-    //   <CompatabilityContainer />
-    // </div>
   )
 }
 
