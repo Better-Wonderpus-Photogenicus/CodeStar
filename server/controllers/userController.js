@@ -58,6 +58,18 @@ userController.verifyUser = (req, res, next) => {
   }
 };
 
+userController.getUser = (req, res, next) => {
+
+  User.findOne({ _id: req.cookies.ssid })
+    .then(results => {
+      let { name, birthday } = results;
+      birthday = birthday.toDateString();
+      res.locals.userInfo = { name, birthday }
+      return next();
+    })
+    .catch(err => next({log: 'getting user', message: {err: 'error here'}}))
+}
+
 userController.google = (req, res, next) => {
 
   const { code } = req.query;

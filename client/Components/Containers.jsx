@@ -4,6 +4,8 @@ import ResultsContainer from "./ResultsContainer.jsx";
 
 function CompatibilityContainer() {
   const [text, setText] = React.useState('')
+  const [sign1, setSign1] = React.useState('')
+  const [sign2, setSign2] = React.useState('')
 
   const [loggedIn, setLoggedIn] = React.useState(true);
 
@@ -19,11 +21,18 @@ function CompatibilityContainer() {
     loggedIn();
   }, [])
 
-  if (!loggedIn) {location.href = 'http://localhost:8080/'; alert('Please sign in');}
+  if (!loggedIn) {
+    location.href = 'http://localhost:8080/';
+    alert('Please log in!')
+  }
+
 
   function handleSubmit(){
     const id1 = document.getElementById('userSign').value
     const id2 = document.getElementById('partnerSign').value
+    setSign1(document.getElementById('userSign').options[id1].innerText);
+    setSign2(document.getElementById('partnerSign').options[id2].innerText);
+
     const body = {
       id1,
       id2,
@@ -44,7 +53,7 @@ function CompatibilityContainer() {
   return (
     <div id="containers">
       <FormContainer handleSubmit={handleSubmit}/>
-      <ResultsContainer text={text}/>
+      <ResultsContainer text={text} sign1={sign1} sign2={sign2}/>
     </div>
   )
 }

@@ -40,7 +40,6 @@ app.post('/api', bloomController.checkCache, bloomController.getCompatibility, (
 
 app.post('/signup', userController.createUser, cookieController.setSSIDCookie, sessionController.startSession, (req, res) => {
     res.status(302).redirect('http://localhost:8080/compatibility');
-
 })
 
 app.post('/login', userController.verifyUser, cookieController.setSSIDCookie, sessionController.startSession, (req, res) => {
@@ -54,6 +53,10 @@ app.get('/login/google', userController.google, userController.createUser, cooki
 
 app.get('/loggedIn', sessionController.isLoggedIn, (req, res) => {
     res.status(200).json(res.locals.loggedIn);
+})
+
+app.get('/profile/userinfo', userController.getUser, (req, res) => {
+    res.json(res.locals.userInfo);
 })
 
 // ERROR HANDLING
