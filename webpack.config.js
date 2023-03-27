@@ -40,8 +40,12 @@ module.exports = {
 			publicPath: '/build',
 			directory: path.resolve(__dirname, 'build'),
 		},
-		proxy: {
-			'/api': 'http://localhost:3000'
-		}
+		proxy: 
+      [
+        {
+          context: ['/loggedIn', '/api'],
+          target: 'http://localhost:3000',
+        },
+      ]
 	}
 };

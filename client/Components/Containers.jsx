@@ -5,6 +5,22 @@ import ResultsContainer from "./ResultsContainer.jsx";
 function CompatibilityContainer() {
   const [text, setText] = React.useState('')
 
+  const [loggedIn, setLoggedIn] = React.useState(true);
+
+  React.useEffect(() => {
+    const url = '/loggedIn'
+
+    const loggedIn = async () => {
+      const response = await fetch(url);
+      const json = await response.json();
+    
+      setLoggedIn(json);
+    }
+    loggedIn();
+  }, [])
+
+  if (!loggedIn) location.href = 'http://localhost:8080/'
+
   function handleSubmit(){
     const id1 = document.getElementById('userSign').value
     const id2 = document.getElementById('partnerSign').value

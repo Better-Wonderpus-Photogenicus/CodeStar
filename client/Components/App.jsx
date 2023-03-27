@@ -6,6 +6,7 @@ import LogIn from './Login.jsx';
 import SignUp from './Signup.jsx';
 
 function App() {
+
   return (
     <BrowserRouter>
       <header>
@@ -19,8 +20,8 @@ function App() {
         <Routes>
           <Route path='/' element={<LogIn/>}></Route>
           <Route path='/signup' element={<SignUp/>}></Route>
-          <Route path='/compatibility' element={<CompatibilityContainer/>}></Route>
-          <Route path='/profile' element={<Profile/>}></Route>
+          <Route path='/compatibility' element={<CompatibilityContainer />}></Route>
+          {/* <Route path='/profile' element={<Profile/>}></Route> */}
         </Routes>
       </main>
     </BrowserRouter>
