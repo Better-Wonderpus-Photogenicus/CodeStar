@@ -33,11 +33,11 @@
 
   #formContainer {
     display: flex;
-    // border: 1px solid green;
+    border: 1px solid green;
     align-items: center;    
     height: 100px;
     margin: 20px;
-    width: 45%;
+    width: 55%;
     justify-content: space-around;
   }
 
@@ -72,10 +72,10 @@
     }
   }
 }
-#signup {
-  display: flex;
+// #signup {
+//   display: flex;
 
-}
+// }
 
 #login {
   display: flex;
