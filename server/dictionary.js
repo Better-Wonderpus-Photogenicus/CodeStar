@@ -31,6 +31,7 @@ const dictionary = {
 'escapades': 'side projects',
 'courtship': 'programming session',
 'passionate': 'intellectually stimulating',
+'passion': 'hard learning',
 'heat': 'concentration',
 'fling': 'hackathon',
 'one-nightstand': 'hackathon',

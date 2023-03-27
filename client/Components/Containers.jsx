@@ -26,6 +26,7 @@ function CompatibilityContainer() {
     alert('Please log in!')
   }
 
+
   function handleSubmit(){
     const id1 = document.getElementById('userSign').value
     const id2 = document.getElementById('partnerSign').value
