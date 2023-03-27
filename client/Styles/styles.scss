@@ -14,21 +14,28 @@ header {
   height: 80px;
   margin-top: 0px;
   background-color: rgba(44, 98, 208, 0.2)
-
-  // #links {
-  //   width: 18%;
-  //   border: 1px solid blue;
-  //   justify-content: space-between;
-  //   align-items: baseline;
-  // }
 }
 
-#logo {
-  width: 20%;
-  justify-content: flex-end;
-  align-items: flex-end;
-  margin: auto;
-}
+  #nav {
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    justify-content: flex-start;
+    padding-left: 10px;
+    align-items: center;
+    border: 1px solid green;
+    font-size: 1.5rem;
+  }
+  #logo {
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    border: 1px solid blue;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
 
 a {
   color: white;
@@ -118,13 +125,111 @@ button {
     }
   }
 }
-#signup {
+.signup {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+  height: 50vh;
 
+  .signup-container {
+    display: flex;
+    width: 300px;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px;
+    padding: 2px;
+    // border: 1px solid red;
+  }
+  #text {
+    margin: 5px 10px;
+  }
+  #text2, #text3 {
+    margin: 5px 12px;
+  }
+  #birthday {
+    margin: 0 15px;
+    padding: 2px;
+  }
+  #submit {
+    display: flex;
+    justify-content: flex-end;
+    width: 242px;
+  }
+  #btn {
+    height: 30px;
+    width: 80px;
+    background-color: black;
+    color: aqua;
+    border-radius: 5px;
+  }
+  #password, #username {
+    height: 25px;
+  }
 }
 
-#login {
+.login {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+  height: 50vh;
 
+  .login-container {
+    display: flex;
+    width: 300px;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px;
+    padding: 2px;
+    // border: 1px solid red;
+  }
+  #submit {
+    display: flex;
+    justify-content: flex-end;
+    width: 242px;
+    
+  }
+  #text {
+    margin: 5px 10px;
+  }
+  #text2 {
+    margin: 5px 12px;
+  }
+  #bottombox {
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #google{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border: 1px solid red;
+    width: 40%;
+    height: 40px;
+    margin: 20px;
+    background-color: aqua;
+    border-radius: 5px;
+  }
+  #newsignup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+  }
+  #btn {
+    height: 30px;
+    width: 80px;
+    background-color: black;
+    color: aqua;
+    border-radius: 5px;
+  }
+  #password, #username {
+    height: 25px;
+  }
 }
 

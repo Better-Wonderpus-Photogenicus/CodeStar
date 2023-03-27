@@ -20,7 +20,7 @@ function CompatibilityContainer() {
   }, [])
 
   if (!loggedIn) {location.href = 'http://localhost:8080/'; alert('Please sign in');}
-  
+
   function handleSubmit(){
     const id1 = document.getElementById('userSign').value
     const id2 = document.getElementById('partnerSign').value
