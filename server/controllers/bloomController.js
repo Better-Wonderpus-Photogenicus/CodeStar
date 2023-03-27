@@ -39,7 +39,7 @@ bloomController.getCompatibility = (req, res, next) => {
         //REMOVES ALL CHARACTERS WITH &NBSP; AT THE END
         text = text.replace(/(&nbsp;)/g, '')
         //REMOVES THE BREAK TAGS LEFT OVER AT THE END
-        text = text.replace(/<([^;]*)>/, '')
+        text = text.replace(/<([^;]*)>/g, '')
         //REPLACES THE BROKEN APOSTROPHE
         text = text.replace(/&([^;]*);/g, "'")
 

@@ -2,20 +2,22 @@ const Session = require('../models/sessionModel');
 const sessionController = {};
 
 sessionController.isLoggedIn = (req, res, next) => {
-    //CHANGE FROM CALLBACK
-    //   Session.exists({ cookieId: req.cookies.ssid }, (err, results) => {
-    //   if (results && req.cookies.ssid) {
-    //     return next();
-    //   } else {
-    //     res.redirect('/signup');
-    //   }
-    // });
+    Session.exists({ cookieId: req.cookies.ssid })
+        .then(results => {
+            if (results && req.cookies.ssid) {
+                res.locals.loggedIn = true;
+                return next();
+            } else {
+                res.locals.loggedIn = false;
+                return next();
+            }
+        })
+        .catch(err => next({log: 'isLoggedIn', message: {err: 'error here', err}}))
 };
   
 
 // create new session if one does not yet exist
 sessionController.startSession = (req, res, next) => {
-    console.log(req.cookies.ssid);
     Session.exists({ cookieId: req.cookies.ssid })
     .then(results => {
         if (results) return next();
