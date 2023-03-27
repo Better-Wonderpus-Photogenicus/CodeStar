@@ -46,14 +46,14 @@ function LogIn() {
           <input type='password' name='password' id='password' required />
         </div>
         <div className='login-container' id='submit'>
-          <input type='submit' id='btn'/>
+          <input type='submit' id='btn' value='Log In'/>
         </div>
       </form> 
 
       <div id='bottombox'> 
         <button type='button' id='google' onClick={oauthSignIn}>Log In With Google</button>
         <div id='newsignup'> 
-          <p>Don't have an account? Click here to sign-up.</p>
+          <p>Don't have an account? Click link below to sign-up.</p>
           <a href="/signup">Sign Up</a>
         </div>
       </div> 
