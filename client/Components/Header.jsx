@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes, BrowserRouter, Link } from 'react-router-dom';
-import SignUp from "./SignUp.jsx";
-import LogIn from "./LogIn.jsx";
+import SignUp from "./Signup.jsx";
+import LogIn from "./Login.jsx";
 
 function Header() {
 

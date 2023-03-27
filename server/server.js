@@ -15,7 +15,9 @@ mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     dbName: 'CodeStar',
-  });
+  })
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.log(err));
 
 app.use(express.json());
 app.use(express.urlencoded());
@@ -30,9 +32,11 @@ app.use(express.static(path.join(__dirname, '../client/')));
 
 //ROUTES
 
-app.post('/api', bloomController.getCompatibility, (req, res) => {
+app.post('/api', bloomController.checkCache, bloomController.getCompatibility, (req, res) => {
     return res.status(200).json(res.locals.text)
 })
+
+// SIGNUP/LOGIN ROUTES
 
 app.post('/signup', userController.createUser, cookieController.setSSIDCookie, sessionController.startSession, (req, res) => {
     return res.sendStatus(200);
