@@ -2,8 +2,8 @@ import React from 'react';
 import Header from './Header.jsx'
 import CompatibilityContainer from './Containers.jsx';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import LogIn from './LogIn.jsx';
-import SignUp from './SignUp.jsx';
+import LogIn from './Login.jsx';
+import SignUp from './Signup.jsx';
 
 function App() {
   return (
