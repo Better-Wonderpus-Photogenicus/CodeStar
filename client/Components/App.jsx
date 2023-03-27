@@ -4,12 +4,14 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import LogIn from './Login.jsx';
 import SignUp from './Signup.jsx';
 import Profile from './Profile.jsx';
+import icon from '../Assets/Images/icons8-starburst-shape-80.png'
 
 function App() {
 
   return (
     <BrowserRouter>
       <header id='header'>
+        <img src={icon} id='icon' />
         <h1 id="logo"> {"<"}code{">"}star </h1>
       </header>
         <nav id='nav'>
