@@ -1,6 +1,7 @@
 const dotenv = require('dotenv').config();
 const { Cache } = require('../models/cacheModel');
 const bloomController = {};
+const dictionary = require('../dictionary.js')
 
 bloomController.checkCache = async (req, res, next) => {
   const { id1, id2 } = req.body;
@@ -45,11 +46,13 @@ bloomController.getCompatibility = (req, res, next) => {
         //REMOVES ALL CHARACTERS WITH &NBSP; AT THE END
         text = text.replace(/(&nbsp;)/g, '')
         //REMOVES THE BREAK TAGS LEFT OVER AT THE END
-        text = text.replace(/<([^;]*)>/, '')
+        text = text.replace(/<([^;]*)>/g, '')
         //REPLACES THE BROKEN APOSTROPHE
-        text = text.replace(/&([^;]*);/, "'")
+        text = text.replace(/&([^;]*);/g, "'")
         
-        // this is where the text editing would happen?
+        for (key in dictionary) {
+            text = text.replaceAll(key, dictionary[key])
+        };
 
         Cache.create({ key: res.locals.key, text: text })
           .then(data => {
