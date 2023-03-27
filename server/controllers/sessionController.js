@@ -15,6 +15,7 @@ sessionController.isLoggedIn = (req, res, next) => {
 
 // create new session if one does not yet exist
 sessionController.startSession = (req, res, next) => {
+    console.log(req.cookies.ssid);
     Session.exists({ cookieId: req.cookies.ssid })
     .then(results => {
         if (results) return next();
@@ -22,7 +23,7 @@ sessionController.startSession = (req, res, next) => {
           Session.create({ cookieId: req.cookies.ssid })
           .then(() => next())
           .catch(err => {
-            return next({log: 'startsession', message: {err: 'error here'}});})
+            return next({log: 'startsession', message: {err: 'error here', err}});})
         }   
     })
     .catch((err) => {

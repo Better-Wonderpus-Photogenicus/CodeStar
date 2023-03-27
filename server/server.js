@@ -35,17 +35,18 @@ app.post('/api', bloomController.getCompatibility, (req, res) => {
 })
 
 app.post('/signup', userController.createUser, cookieController.setSSIDCookie, sessionController.startSession, (req, res) => {
-    return res.sendStatus(200);
+    res.status(302).redirect('http://localhost:8080/compatibility');
+    // return res.sendStatus(200);
 })
 
 app.post('/login', userController.verifyUser, cookieController.setSSIDCookie, sessionController.startSession, (req, res) => {
-    // res.redirect('/homepage'); // or whatever
-    res.sendStatus(200);
+    res.status(302).redirect('http://localhost:8080/compatibility');
+    // res.sendStatus(200);
 })
 
 app.get('/login/google', userController.google, userController.createUser, cookieController.setSSIDCookie, sessionController.startSession, (req, res) => {
     // res.sendStatus(200);
-    res.redirect('http://localhost:8080/');
+    res.redirect('http://localhost:8080/compatibility');
 })
 
 // ERROR HANDLING
