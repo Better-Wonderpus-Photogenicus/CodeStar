@@ -41,7 +41,7 @@ bloomController.getCompatibility = (req, res, next) => {
         //REMOVES THE BREAK TAGS LEFT OVER AT THE END
         text = text.replace(/<([^;]*)>/, '')
         //REPLACES THE BROKEN APOSTROPHE
-        text = text.replace(/&([^;]*);/, "'")
+        text = text.replace(/&([^;]*);/g, "'")
 
         // let pointer = 0;
         // for (let i = 0 ; i < text.length; i++) {

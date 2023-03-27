@@ -6,7 +6,6 @@ const userController = {};
 
 userController.createUser = (req, res, next) => {
   const { username, password, birthday } = req.body;
-
   if (res.locals.google) {
     const { id, name, birthday } = res.locals;
 
@@ -27,18 +26,21 @@ userController.createUser = (req, res, next) => {
   }
 
   else if (username && password && birthday) {
+    console.log('line 32')
     User.create({ username, password, name: username, birthday })
       .then(() => next())
       .catch((err) => {
-        return next({log: 'createUser', message: {err: 'error here'}});
+        return next({log: 'createUser', message: {err: 'error here', err}});
       });
   } else {
-    return next({log: 'createUser', message: {err: 'error here'}});
+    return next({log: 'createUser', message: {err: 'error here', err}});
   }
 };
 
 userController.verifyUser = (req, res, next) => {
+  console.log('verify user')
   const { username, password } = req.body;
+  console.log(username, password)
   if (username && password) {
     User.findOne({ username })
       .then((results) => {
@@ -46,7 +48,7 @@ userController.verifyUser = (req, res, next) => {
           results.comparePassword(password, (err, isMatch) => {
             if (!isMatch) {
               //REDIRECT TO SIGNUP PAGE
-              res.redirect('/');
+              res.redirect('http://localhost:8080/');
             } else return next();
           })
         }
