@@ -2,7 +2,7 @@ import React from "react";
 import FormContainer from "./FormContainer.jsx";
 import ResultsContainer from "./ResultsContainer.jsx";
 
-function CompatabilityContainer() {
+function CompatibilityContainer() {
   const [text, setText] = React.useState('')
 
   function handleSubmit(){
@@ -33,4 +33,4 @@ function CompatabilityContainer() {
   )
 }
 
-export default CompatabilityContainer;
+export default CompatibilityContainer;
