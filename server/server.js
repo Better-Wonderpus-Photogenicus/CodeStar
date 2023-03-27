@@ -43,6 +43,11 @@ app.post('/login', userController.verifyUser, cookieController.setSSIDCookie, se
     res.sendStatus(200);
 })
 
+app.get('/login/google', userController.google, userController.createUser, cookieController.setSSIDCookie, sessionController.startSession, (req, res) => {
+    // res.sendStatus(200);
+    res.redirect('http://localhost:8080/');
+})
+
 // ERROR HANDLING
 
 app.use('*', (req, res) => {
