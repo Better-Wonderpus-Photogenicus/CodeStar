@@ -6,4 +6,6 @@ const cacheSchema = new Schema({
   text: { type: String, required: true }
 }, { collection: 'Cache'});
 
-module.exports = mongoose.model('Cache', cacheSchema);
+const Cache = mongoose.model('Cache', cacheSchema);
+
+module.exports = { Cache };

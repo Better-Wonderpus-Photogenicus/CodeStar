@@ -1,21 +1,28 @@
 const dotenv = require('dotenv').config();
-const cache = require('../models/cacheModel');
+const { Cache } = require('../models/cacheModel');
 const bloomController = {};
+const dictionary = require('../dictionary.js')
 
 bloomController.checkCache = async (req, res, next) => {
   const { id1, id2 } = req.body;
   const key = [id1, id2].sort().join();
+  res.locals.key = key;
 
-  const found = await cache.findOne({ key });
-  // look up what findOne returns
-  // if it returns something, then pass that in to the user
-  // if not, move on to getcompatibility from API
-  // also write a storecompatibility function for when we get one :)
-  // also error handling
-
+  try {
+    const found = await Cache.findOne({key: key});
+    if (!found) return next();
+    else res.locals.text = found.text;
+    return next();
+  } catch (err) {
+    return next({log: `error in bloomController checkcache ${err}`,
+        status: 400,
+      });
+  }
 }
 
 bloomController.getCompatibility = (req, res, next) => {
+    if (res.locals.text) return next();
+    
     const { id1, id2 } = req.body;
     fetch('https://api.bloom.be/api/signtosign', {
         method: "POST", 
@@ -42,13 +49,22 @@ bloomController.getCompatibility = (req, res, next) => {
         text = text.replace(/<([^;]*)>/g, '')
         //REPLACES THE BROKEN APOSTROPHE
         text = text.replace(/&([^;]*);/g, "'")
+        
+        for (key in dictionary) {
+            text = text.replaceAll(key, dictionary[key])
+        };
 
-        // let pointer = 0;
-        // for (let i = 0 ; i < text.length; i++) {
-        //     if (text[i] === '>') pointer = i;
-        // }
-        // text = text.slice(pointer+1);
-        res.locals.text = text})
+        Cache.create({ key: res.locals.key, text: text })
+          .then(data => {
+            res.locals.text = text 
+            return next();
+          })
+          .catch(err => {
+            return next({
+              log: 'Error in collectionController.getCompatibility in Cache.create',
+            })
+          });
+    })
     .then(()=> next())
     .catch(err => next(err));
 

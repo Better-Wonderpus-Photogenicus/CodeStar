@@ -2,8 +2,6 @@ import React from "react";
 
 function SignUp() {
 
-  const [username, setUsername] = React.useState('');
-
   return (
     <div className='signup'>
       <form action='http://localhost:3000/signup' method="post">
