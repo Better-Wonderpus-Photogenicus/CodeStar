@@ -1,20 +1,55 @@
-#header {
-  display: flex;
-  justify-content: space-around;
-  height: 80px;
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-  #logo {
-    width: 20%;
-    // border: 1px solid blue;
-    // justify-content: flex-end;
-    align-items: flex-end;
-  }
+
+body {
+  background-image: url('../Assets/Images/redd-f-5CPIzjWzGxo-unsplash.jpg');
+  font-family: 'Source Code Pro', monospace;  color: lightblue;
+  margin: 0px;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  height: 80px;
+  margin-top: 0px;
+  background-color: rgba(44, 98, 208, 0.2)
+
   // #links {
   //   width: 18%;
   //   border: 1px solid blue;
   //   justify-content: space-between;
   //   align-items: baseline;
   // }
+}
+
+#logo {
+  width: 20%;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: auto;
+}
+
+a {
+  color: white;
+}
+
+select {
+  background-color: rgb(31, 32, 32);;
+  color: lightblue;
+  border: 1px solid lightblue;
+  border-radius: 25px;
+  width: 10vh;
+  padding: 3px;
+  font-family: 'Source Code Pro';
+}
+
+button {
+  background-color: rgb(31, 32, 32);
+  color: lightblue;
+  border: 1px solid lightblue;
+  border-radius: 25px;
+  padding: 12px;
 }
 
 #containers {
@@ -29,20 +64,32 @@
     height: 25px;
   }
 
+  #dropdowns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+    padding: 20px;
+    width: 50vh;
+  }
+
   #formContainer {
     display: flex;
-    border: 1px solid green;
+    // border: 1px solid green;
+    flex-direction: column;
     align-items: center;    
     height: 100px;
     margin: 20px;
-    width: 55%;
+    width: 75%;
     justify-content: space-around;
   }
 
   #resultsContainer{
     display: flex;
-    border: 1px solid blue; 
-    border-Radius: 5;
+    // border: 1px solid blue; 
+    border-Radius: 25px;
+    background-color: rgba(65, 63, 63, 0.9);
+    background-repeat: no-repeat;
     width: 75%; 
     display: flex; 
     justify-content: center; 
@@ -52,10 +99,10 @@
     h2 {
       width: 25%;
       // border: 1px solid blue;
-      color: purple;
+      color: rgb(117, 180, 234);
     }
     #resultsBody{
-      border: 1px solid blue;
+      // border: 1px solid blue;
       border-radius: 5;
       width: 95%;
       height: 15rem;
@@ -64,6 +111,7 @@
     #save{
       display: flex;
       justify-content: center;
+      align-items: center;
     }
     #btn {
       margin-left: 15px;
